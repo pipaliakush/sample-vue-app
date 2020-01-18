@@ -13,16 +13,16 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Name</th>
+          <th scope="col" class="w-name">Name</th>
           <th scope="col">Age</th>
           <th scope="col">Salary</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="employee in employees" :key="employee.id">
+        <tr v-for="employee in employees.data" :key="employee.id">
           <th>{{employee.id}}</th>
-          <td>{{ employee.employee_name }}</td>
+          <td class="w-name">{{ employee.employee_name }}</td>
           <td>{{ employee.employee_age }}</td>
           <td>{{ employee.employee_salary }}</td>
           <td>
@@ -37,7 +37,7 @@
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
               </b-dropdown-item-button>
               <b-dropdown-item-button
-                @click="$emit('modalData', employee, 'Delete', 'Edit Employee Details', 'md', false)"
+                @click="$emit('modalData', employee, 'Delete', 'Delete Employee', 'md', false)"
               >
                 Delete
                 <i class="fa fa-trash" aria-hidden="true"></i>
@@ -70,5 +70,8 @@ export default {
 .table th,
 .table td {
   vertical-align: middle !important;
+}
+.w-name {
+  width: 700px;
 }
 </style>
