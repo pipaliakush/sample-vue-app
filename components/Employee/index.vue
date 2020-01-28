@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Table @modalData="modalData" />
+    <Table @modalData="modalData" data-test="table" />
     <Modals
       v-if="modalShow"
       :component="modalId"
@@ -10,6 +10,7 @@
       :modal-title="modalTitle"
       :modal-size="modalSize"
       :modal-close-on-backdrop="modalCloseOnBackdrop"
+      data-test="modal"
     />
   </div>
 </template>
